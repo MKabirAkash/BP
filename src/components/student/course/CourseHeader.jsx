@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import QuestionCourse from './ClassesCourse'
 
 function CourseHeader() {
   return (
@@ -14,10 +15,17 @@ function CourseHeader() {
                     </div>                        
                 </div>
                 <div className="w-4/12 shadow-3">
-
                     <div className='course_topic_header'>
-                     <div className='flex border-b border-[#FF4900] py-3 px-5'><span>icon</span><h2 className='pl-3'>চোর ঢুকলে ঘরে কল আসবে মোবাইলে</h2> <span className='ml-auto'>icon</span></div>
-                     <div className='flex py-3 px-5'><span>icon</span><h2 className='pl-3'>চোর ঢুকলে ঘরে কল আসবে মোবাইলে</h2> <span className='ml-auto'>icon</span></div>
+                     <div className='flex flex-row justify-between border-b border-[#FF4900] py-3 px-5'>
+                      <div className='flex flex-row'>
+                      <span>icon</span>
+                        <h2 className='pl-3'>রসায়ন</h2> 
+                      </div>
+                        
+                        <span className='ml-auto'>icon end</span>
+                      </div>
+                     <QuestionCourse />
+                     <QuestionCourse />
                     </div>
                 </div>
             </div>
