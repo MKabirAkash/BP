@@ -1,0 +1,71 @@
+.rbc-event-content {
+    color: #333; /* Apply your desired text color */
+  }
+  .rbc-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+  /* Optional: Change the background color of the event */
+  .rbc-event {
+    background-color: #f0f0f0; /* Apply your desired background color */
+  }
+.rbc-event {
+    border: 1px solid #ccc; /* Apply your desired border styles */
+    /* You can also add more styling like padding, margin, etc. */
+  }
+  
+  .rbc-toolbar-label {
+    font-size: 18px; /* Apply your desired font size */
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #3056D3; /* Apply your desired font weight */
+  }
+  
+  .rbc-header {
+    overflow: hidden;
+    flex: 1 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 06px 6px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 90%;
+
+    padding: auto;
+    min-height: 0;
+    border-bottom: 1px solid #ddd;
+}
+  /* Style the navigation buttons */
+  .rbc-btn-group > button {
+    background-color: #3056D3; /* Apply your desired background color */
+    color: #ffffff; /* Apply your desired text color */
+    border-right: 1px solid #3056D3;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 2px;
+   
+
+    text-align: justify;
+    /* Add more styles as needed */
+  }
+  .rbc-toolbar button:active, .rbc-toolbar button.rbc-active {
+    background-color: #3056D3; /* Apply your desired background color */
+    color: #ffffff; /* Apply your desired text color */
+    border: 1px solid #3056D3;
+    border-radius: 5px;
+    margin-top: 2px;
+  
+
+    text-align: justify;
+}
+  
+  /* Style the timeslots */
+  .rbc-timeslot {
+    border-top: 1px solid #ddd; /* Apply your desired border styles */
+    /* You can customize other styles here */
+  }
