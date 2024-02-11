@@ -9,6 +9,8 @@ const template = createSlice({
     signUpVarificationModal: false,
     showModalEventDetails: false,
     newAgencyModal: false,
+    startIndex: 0,
+    endIndex: 4,
     notificationTosta: {
       message: "",
       from: "",
@@ -45,6 +47,19 @@ const template = createSlice({
     showNewAgencyModalAction: (state, action) => {
       state.newAgencyModal = action.payload;
     },
+
+    resetStartIndex: (state) => {
+      state.startIndex = 0;
+    },
+    resetEndIndex: (state) => {
+      state.endIndex = 4;
+    },
+    setStartIndex: (state, action) => {
+      state.startIndex = action.payload;
+    },
+    setEndIndex: (state, action) => {
+      state.endIndex = action.payload;
+    },
   },
 });
 
@@ -57,6 +72,10 @@ export const {
   singInSectionAction,
   singUpSectionAction,
   setSignUpVarificationModal,
+  resetStartIndex,
+  resetEndIndex,
+  setStartIndex,
+  setEndIndex,
 } = template.actions;
 
 export default template.reducer;

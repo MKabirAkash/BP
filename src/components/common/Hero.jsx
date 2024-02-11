@@ -2,13 +2,13 @@ import { useDispatch } from "react-redux";
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden h-screen  py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden h-screen  py-24 sm:py-32 font-sans">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl">
+          <h2 className="text-4xl font-bold tracking-tight text-web_clr sm:text-6xl">
             Bondi PathShala
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 text-table_low">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
           </p>
         </div>
@@ -17,10 +17,10 @@ export default function Hero() {
           <>
             <div className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-primary/10">
               <div className="text-base leading-7">
-                <h3 className="font-semibold text-primary text-2xl mb-2">
+                <h3 className="font-semibold text-web_clr text-2xl mb-2">
                   Course
                 </h3>
-                <p className="text-4xl font-bold tracking-tight text-primary sm:text-6x">
+                <p className="text-4xl font-bold tracking-tight text-web_clr sm:text-6x">
                   3
                 </p>
               </div>
@@ -29,20 +29,20 @@ export default function Hero() {
 
           <div className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-primary/10">
             <div className="text-base leading-7">
-              <h3 className="font-semibold text-2xl mb-2 text-primary">
+              <h3 className="font-semibold text-2xl mb-2 text-web_clr">
                 Teacher
               </h3>
-              <p className="text-4xl font-bold tracking-tight text-primary sm:text-6x">
+              <p className="text-4xl font-bold tracking-tight text-web_clr sm:text-6x">
                 100
               </p>
             </div>
           </div>
           <div className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-primary/10">
             <div className="text-base leading-7">
-              <h3 className="font-semibold text-primary text-2xl mb-2">
-                Client
+              <h3 className="font-semibold text-web_clr text-2xl mb-2">
+                Student
               </h3>
-              <p className="text-4xl font-bold tracking-tight text-primary sm:text-6x">
+              <p className="text-4xl font-bold tracking-tight text-web_clr sm:text-6x">
                 200
               </p>
             </div>
