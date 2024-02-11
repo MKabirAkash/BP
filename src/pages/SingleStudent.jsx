@@ -12,7 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import StudentCourseTable from "../components/student/admin_student/StudentCourseTable";
-
+import { EyeIcon, KickOut, LockIcon } from "../components/SVG/SVGIcons";
+import StudentPaymentTable from "../components/student/admin_student/StudentPaymentTable";
 function SingleStudent() {
   let [showBasic, setShowBasic] = useState(true);
   let [showCourse, setShowCourse] = useState(false);

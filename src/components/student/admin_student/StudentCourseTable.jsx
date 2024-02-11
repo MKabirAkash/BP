@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetEndIndex, resetStartIndex } from "../../../redux/common/template";
 import Pagination from "../../common/Pagination";
-import { TrashIcon } from "../../SVG/SVGIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate, faCopy, faTrash, faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
 const headers = [
