@@ -11,6 +11,7 @@ import {
 import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import StudentSearchFilter from "../components/student/admin_student/StudentSearchFilter";
+import StudentFilterModal from "../components/common/Modals/StudentFilterModal";
 
 function StudentList() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ function StudentList() {
             </span>
             <div className="flex flex-row justify-end ">
               <button className="mr-4">
+                <StudentFilterModal/>
                 <Button icon={faFilter} text="Filter"/>
               </button>
               <button className="mr-4">
