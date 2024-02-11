@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
+import DropDown from "../../common/DropDown";
 function StudentSearchFilter() {
+  let [showDropDown,setShowDropDown]=useState(false)
   return (
     <div className="mb-8 rounded-xl flex flex-col sm:flex-row w-full gap-y-8 sm:gap-y-0 sm:gap-x-8">
       <div className="w-full xl:w-1/2 flex flex-col rounded-xl bg-white p-4 md:p-8">
@@ -41,17 +43,19 @@ function StudentSearchFilter() {
           </div>
         </div>
       </div>
-      <div className="w-full xl:w-1/2 flex flex-col rounded-xl bg-white p-4 md:p-8 ">
-        <span className="text-table_heading text-lg font-medium mb-3 sm:-mb-12 lg:mb-3">
+      <div className="w-full xl:w-1/2 flex flex-col rounded-xl bg-white p-4 md:p-8 relative">
+        <span className="text-table_heading text-lg font-medium mb-3 sm:-mb-12 lg:mb-3" >
           View By Course
         </span>
-        <div className="w-full  py-2.5 flex flex-row justify-between sm:my-auto  border border-input_border rounded-lg pl-4 pr-2.5">
+        <div className="w-full  py-2.5 flex flex-row justify-between sm:my-auto  border border-input_border rounded-lg pl-4 pr-2.5" onClick={()=>{
+          setShowDropDown(!showDropDown)
+        }}>
           <span>View All Student</span>
           <span>
             <FontAwesomeIcon icon={faAngleDown} />
           </span>
         </div>
-        <p>adkfhakl</p>
+        {showDropDown && (<div className="mt-[88px] px-4 md:px-8 w-full absolute left-0 top-8"><DropDown/></div>)}
       </div>
     </div>
   );
