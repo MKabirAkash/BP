@@ -87,6 +87,8 @@ function SingleStudent() {
           </div>
         </div>
       </div>
+
+      
       {showBasic && (
         <>
           <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg bg-gray mt-2 mx-2 md:mx-4 ">
