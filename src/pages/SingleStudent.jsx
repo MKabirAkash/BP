@@ -9,6 +9,7 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import StudentCourseTable from "../components/student/admin_student/StudentCourseTable";
 
 function SingleStudent() {
   let [showBasic, setShowBasic] = useState(true);
@@ -88,7 +89,7 @@ function SingleStudent() {
         </div>
       </div>
 
-      
+
       {showBasic && (
         <>
           <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg bg-gray mt-2 mx-2 md:mx-4 ">
@@ -179,8 +180,9 @@ function SingleStudent() {
         </>
       )}
       {showCourse && (
+        
         <div className="bg-white">
-          <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg   my-auto">
+          <div className="px-4 md:px-8 flex flex-row justify-between rounded-lg ">
             <span className="text-table_heading text-2xl font-medium my-auto">
               Active Courses
             </span>
@@ -192,7 +194,12 @@ function SingleStudent() {
               </span>
             </span>
           </div>
+          <div className="p-4 md:p-8 rounded-lg   my-auto">
+            <StudentCourseTable  data={[1,2,3,4,5]}/>
+          </div>
         </div>
+       
+   
       )}
       {showPayment && (
         <div className="bg-white">
