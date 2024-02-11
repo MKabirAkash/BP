@@ -1,19 +1,24 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetEndIndex, resetStartIndex } from "../../../redux/common/template";
 import Pagination from "../../common/Pagination";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowsRotate,
+  faCopy,
+  faTrash,
+  faTrashRestoreAlt,
+} from "@fortawesome/free-solid-svg-icons";
 const headers = [
-  { name: "Name", styles: "min-w-[150px] pl-3" },
-  { name: "Institute Name", styles: "min-w-[250px]" },
-  { name: "Registration No.", styles: "min-w-[200px]" },
-  { name: "Phone No.", styles: "min-w-[150px]" },
-  { name: "Status", styles: "min-w-[40px] text-center" },
-  { name: "Group Join", styles: "min-w-[210px] text-center" },
-  { name: "Action", styles: "min-w-[60px]" },
+  { name: "Course Name", styles: "min-w-[150px] pl-3" },
+  { name: "Promo Code", styles: "min-w-[150px]" },
+  { name: "Date", styles: "min-w-[150px]" },
+  { name: "Facebook ID", styles: "min-w-[150px]" },
+  { name: "Action", styles: "min-w-[200px] text-center" },
 ];
 
-const StudentTable = ({ data }) => {
+const StudentCourseTable = ({ data }) => {
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
 
@@ -35,6 +40,7 @@ const StudentTable = ({ data }) => {
             <div className="w-full overflow-x-auto border-none">
               <table className="w-full table-auto bg-white rounded-xl">
                 <TableHead headers={headers} />
+
                 <TableBody data={data} />
               </table>
             </div>
@@ -67,7 +73,7 @@ const StudentTable = ({ data }) => {
   );
 };
 
-export default StudentTable;
+export default StudentCourseTable;
 
 const TableHead = ({ headers }) => {
   return (
@@ -99,53 +105,61 @@ const TableBody = ({ data }) => {
               key={index}
               className=" rounded-md border-b border-profile_tag border-opacity-20"
             >
-              <td className=" py-2 pl-4">
-                <div className="min-w-max">
-                  <h5 className="text-profile_name font-normal lg:text-base sm:text-sm xs:text-sm ">
-                    Tonmoy vaiya
-                  </h5>
-                </div>
-              </td>
-              <td className=" py-4 ">
-                <p className="text-text_clr md:text-base sm:text-xs xs:text-xs">
-                  Thakurgaon Govt College
-                </p>
-              </td>
-
-              <td className=" py-2">
-                <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs ">
-                  MATH8728278
-                </h5>
-              </td>
-
-              <td className=" py-2 ">
-                <p className="text-profile_name md:text-sm sm:text-xs xs:text-xs text-left">
-                  01876542422
-                </p>
-              </td>
-              <td className=" py-2  ">
-                <h5
-                  className={`text-center ${
-                    index % 2 === 0 ? "text-success" : "text-danger"
-                  }  md:text-sm sm:text-xs xs:text-xs`}
-                >
-                  {index % 2 === 0 ? "Active" : "Banned"}
-                </h5>
-              </td>
-
-              <td className=" py-2  ">
-                <p
-                  className={`text-center ${
-                    index % 2 === 0 ? "text-success" : "text-danger"
-                  }  md:text-sm sm:text-xs xs:text-xs`}
-                >
-                  {index % 2 === 0 ? "Joined" : "Not Yet"}
-                </p>
-              </td>
-              <td className=" py-2  ">
-                <span className="text-web_clr font-medium border border-white hover:border-web_clr cursor-pointer hover:bg-white text-sm bg-btn_bg2 px-4 py-3 rounded-xl ">
-                  View
+              <td className="py-4 pl-4 pr-4">
+                <span className="min-w-max flex">
+                  <span>
+                    {" "}
+                    <img
+                      src="https://www.shutterstock.com/image-photo/elearning-education-internet-lessons-online-600nw-2158034833.jpg"
+                      className="w-32 h-16 rounded-xl"
+                    />
+                  </span>
+                  <span className="my-auto pl-4 flex flex-col ">
+                    <span>this is a testcourse2635236 of</span>
+                    <span>powerplay season 1</span>
+                  </span>
                 </span>
+              </td>
+              <td className="py-4">
+                <p className="text-text_clr md:text-sm sm:text-xs xs:text-xs">
+                  AFGWER80
+                </p>
+              </td>
+
+              <td className="py-2">
+                <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs ">
+                  AFGWER80
+                </h5>
+              </td>
+
+              <td className="py-2">
+                <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs flex gap-x-2">
+                  <span className="my-auto underline cursor-pointer text-[#0092ff]">
+                    Tonmoy Hasan
+                  </span>
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCopy}
+                      className="text-white bg-[#0092ff] py-1 px-1.5 rounded"
+                    />
+                  </span>
+                </h5>
+              </td>
+
+              <td className="py-2">
+                <h5 className="text-table_low md:text-sm sm:text-xs xs:text-xs flex justify-center gap-x-4">
+                  <span className="text-[#23ab58] bg-[#e0ffe1] px-4 py-2 rounded-xl flex cursor-pointer">
+                    Active
+                  </span>
+                  <span className="text-[#EA2725] bg-[#fde9e9] px-4 py-2 rounded-xl flex my-auto gap-x-2 cursor-pointer">
+                    <span className="hidden md:inline">Remove</span>{" "}
+                    <FontAwesomeIcon icon={faTrash} className="pt-0.5" />
+                  </span>
+                  <span className="text-[#0092ff] bg-[#e0f2ff] px-4 py-2 rounded-xl flex gap-x-2 cursor-pointer">
+                    <span className="hidden md:inline">Exchange</span>{" "}
+                    <FontAwesomeIcon icon={faArrowsRotate} className="pt-0.5" />
+                  </span>
+                </h5>
               </td>
             </tr>
           ))}

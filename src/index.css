@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "sans";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -83,4 +83,13 @@
     radial-gradient(at 90% 90%, rgba(2, 100, 46, 0.1) 0px, transparent 20%),
     radial-gradient(at 33% 20%, rgba(19, 16, 14, 0.1) 0px, transparent 20%),
     radial-gradient(at 79% 53%, rgba(2, 114, 21, 0.1) 0px, transparent 20%);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+.modal_css {
+  position: absolute;
 }
