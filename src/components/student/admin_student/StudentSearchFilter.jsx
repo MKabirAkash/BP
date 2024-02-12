@@ -5,6 +5,7 @@ import DropDown from "../../common/DropDown";
 import { useSelector } from "react-redux";
 function StudentSearchFilter() {
   let [showDropDown, setShowDropDown] = useState(false);
+  let [showCategory, setShowCategory] = useState(false);
   const { courses } = useSelector((state) => state.courseSlice);
   return (
     <div className=" rounded-xl flex flex-col sm:flex-row w-full gap-y-8 sm:gap-y-0 sm:gap-x-8 bg-gray">
@@ -14,11 +15,21 @@ function StudentSearchFilter() {
         </span>
         <div className=" w-full flex flex-col lg:flex-row gap-y-3 lg:gap-y-0 lg:gap-x-3 my-auto">
           <div className="w-full flex flex-col lg:flex-row gap-y-3 lg:gap-y-0 lg:gap-x-3">
-            <div className=" cursor-pointer w-full lg:w-[30%] py-2.5 flex flex-row justify-between my-auto border border-input_border rounded-lg pl-2.5 pr-2.5">
-              <span className="xl:text-base">Search By</span>
-              <span>
-                <FontAwesomeIcon icon={faAngleDown} />
-              </span>
+            <div className="relative cursor-pointer w-full lg:w-[30%] py-2.5 my-auto border border-input_border rounded-lg pl-2.5 pr-2.5">
+              <div className="flex flex-row justify-between " onClick={()=>{
+                setShowCategory(!showCategory)
+              }}>
+                <span className="xl:text-base">Search By</span>
+                <span>
+                  <FontAwesomeIcon icon={faAngleDown} />
+                </span>
+              </div>
+              {showCategory && (
+                <div className="mt-[88px] w-full absolute left-0 top-0 sm:-top-10">
+                  <DropDown options={courses ? courses : null} searchBox={false}/>
+                </div>
+              )}
+             
             </div>
             <div className="w-full lg:w-[67%] flex flex-col lg:flex-row  gap-y-3 lg:gap-y-0 lg:gap-x-3">
               <div className="w-full lg:w-[70%] relative">
@@ -62,7 +73,7 @@ function StudentSearchFilter() {
         </div>
         {showDropDown && (
           <div className="mt-[88px] px-4 md:px-8 w-full absolute left-0 top-4 sm:top-8">
-            <DropDown options={courses ? courses : null} />
+            <DropDown options={courses ? courses : null} searchBox={true}/>
           </div>
         )}
       </div>

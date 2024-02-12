@@ -2,10 +2,11 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-function DropDown({ data, options }) {
+function DropDown({ data, options,searchBox }) {
   return (
     <div className="w-full shadow-1 h-full rounded-lg p-6 bg-white">
-      <div className="w-full ">
+      {searchBox && (
+        <div className="w-full ">
         <span className="py-3 pl-4 absolute">
           <FontAwesomeIcon icon={faSearch} className="text-table_low" />
         </span>
@@ -15,6 +16,8 @@ function DropDown({ data, options }) {
           placeholder="Search"
         />
       </div>
+      )}
+      
       {options &&
         options.map((option, index) => (
           <p
