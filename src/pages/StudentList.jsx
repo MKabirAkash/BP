@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import StudentTable from "../components/student/admin_student/StudentTable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,9 +11,13 @@ import {
 import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import StudentSearchFilter from "../components/student/admin_student/StudentSearchFilter";
+import { useSelector } from "react-redux";
+import StudentFilterModal from "../components/common/Modals/StudentFilterModal";
 
 function StudentList() {
   const navigate = useNavigate();
+  let [showFilterModal, setShowFilterModal] = useState(false);
+  const { students } = useSelector((state) => state.studentSlice);
   return (
     <div className="p-4 md:p-8 bg-gray font-sans">
       <div className="flex flex-col">
@@ -24,7 +28,10 @@ function StudentList() {
               Student List
             </span>
             <div className="flex flex-row justify-end ">
-              <button className="mr-4 ">
+              <button
+                className="mr-4 "
+                onClick={() => setShowFilterModal(!showFilterModal)}
+              >
                 <Button icon={faFilter} text="Filter" />
               </button>
               <button className="mr-4">
@@ -36,10 +43,15 @@ function StudentList() {
             </div>
           </div>
           <div className="mt-3 rounded-xl">
-            <StudentTable data={[1, 2, 3, 4, 5, 6]} />
+            <StudentTable data={students ? students : null} />
           </div>
         </div>
       </div>
+      {showFilterModal && (
+        <div className="modal_css">
+          <StudentFilterModal />
+        </div>
+      )}
     </div>
   );
 }

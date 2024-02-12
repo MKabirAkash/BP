@@ -1,0 +1,80 @@
+export const test_student = [
+  {
+    name: "student 1",
+    institute: "Ins test 2",
+    registration: "HKJIEWASURRI",
+    groupJoined: true,
+    phone: "01330425522",
+    status: 1,
+    courses: ["course2", "course3"],
+  },
+  {
+    name: "student 41",
+    institute: "Ins test 1",
+    registration: "HEEEHJHKJIUI",
+    groupJoined: false,
+    phone: "01303445522",
+    status: 1,
+    courses: ["course1", "course3"],
+  },
+  {
+    name: "student 81",
+    institute: "Ins test 3",
+    registration: "AAAAHHJHKJIUI",
+    groupJoined: true,
+    phone: "017634450992",
+    status: 1,
+    courses: ["course1", "course3"],
+  },
+  {
+    name: "student 31",
+    institute: "Ins test 2",
+    registration: "HHJHKJIUIXWWwwwww",
+    groupJoined: true,
+    phone: "01733445342",
+    status: 1,
+    courses: ["course1", "course3"],
+  },
+  {
+    name: "student 10",
+    institute: "Ins test 3",
+    registration: "HHJHKJLLIIEIUI",
+    groupJoined: false,
+    phone: "01879345522",
+    status: 1,
+    courses: ["course1", "course2", "course3"],
+  },
+  {
+    name: "student 2",
+    institute: "Ins test 2",
+    registration: "HHJHKJIUILLK",
+    groupJoined: true,
+    phone: "01833337522",
+    status: 0,
+    courses: ["course1", "course2"],
+  },
+  {
+    name: "student 19",
+    institute: "Ins test 1",
+    registration: "HHJHHGGUUIUI",
+    groupJoined: false,
+    phone: "0135357777",
+    status: 1,
+    courses: ["course2", "course3"],
+  },
+];
+
+export const test_courses = [
+  {
+    name: "course1",
+    price: 1233,
+  },
+  {
+    name: "course2",
+    price: 1033,
+  },
+  {
+    name: "course3",
+    price: 1209,
+  },
+];

@@ -65,6 +65,9 @@ export default {
         input_border: "#FFDBCC",
         btn_bg2: "#FFEDE5",
         linear: "#FCB045",
+        hover_clr_dark: "#e64100",
+        hover_clr_light: "#ffdccc",
+        
       },
 
       fontFamily: {

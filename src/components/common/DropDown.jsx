@@ -16,9 +16,12 @@ function DropDown({ data, options }) {
         />
       </div>
       {options &&
-        options.map(() => (
-          <p className="border-b p-3 border-gray text-table_heading text-base hover:bg-btn_bg2">
-            HSC Powerplay 2024
+        options.map((option, index) => (
+          <p
+            className="border-b p-3 border-gray text-table_heading text-base hover:bg-btn_bg2"
+            key={index}
+          >
+            {option && option.name ? option.name : "no title set for option"}
           </p>
         ))}
     </div>

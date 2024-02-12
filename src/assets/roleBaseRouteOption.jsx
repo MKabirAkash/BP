@@ -35,7 +35,19 @@ export const navigation_admin = [
       { name: "Notification", to: "/students/notification", current: false },
     ],
   },
-  { name: "Course", to: "/coursedetail", icon: faChalkboard, current: false },
+  {
+    name: "Course",
+    to: "/coursedetail",
+    icon: faChalkboard,
+    current: false,
+    subItem: [
+      { name: "Course List", to: "/courses", current: false },
+      { name: "Course Category", to: "/courses/category", current: false },
+      { name: "Practice Sheets", to: "/courses/sheets", current: false },
+      { name: "Notes", to: "/courses/notes", current: false },
+      { name: "Tamplate", to: "/courses/templates", current: false },
+    ],
+  },
   { name: "Exam", to: "/exam", icon: faStickyNote, current: false },
   { name: "Books", to: "/books", icon: faBook, current: false },
   {
