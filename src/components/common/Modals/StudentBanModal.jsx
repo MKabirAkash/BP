@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faClose } from "@fortawesome/free-solid-svg-icons";
 function StudentBanModal() {
   return (
     <div className="bg-white shadow-5 w-full md:w-[700px] rounded-xl">
-      <p className="w-full border-b border-web_clr border-opacity-25 py-3 text-center">
-        <span className="pl-3">Why are you ban the student ?</span>
+      <p className="w-full border-b border-web_clr border-opacity-25 py-3 flex justify-between px-6">
+        <span className="pl-3 inline-block">Why are you ban the student ?</span> <span className="inline-block cursor-pointer"><FontAwesomeIcon icon={faClose}/></span>
       </p>
       <section className="p-8 flex flex-wrap gap-x-4 gap-y-3 justify-between w-full text-start">
         <div className="w-full">
