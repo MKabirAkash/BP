@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import StudentTable from "../components/student/admin_student/StudentTable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,6 +15,10 @@ import StudentFilterModal from "../components/common/Modals/StudentFilterModal";
 
 function StudentList() {
   const navigate = useNavigate();
+  let [showStudentFilter, setShowStudentFilter] = useState(false);
+  const filterModalClose =()=>{
+    setShowStudentFilter(false)
+  }
   return (
     <div className="p-4 md:p-8 bg-gray font-sans">
       <div className="flex flex-col">
@@ -25,7 +29,12 @@ function StudentList() {
               Student List
             </span>
             <div className="flex flex-row justify-end ">
-              <button className="mr-4 ">
+              <button
+                className="mr-4 "
+                onClick={() => {
+                  setShowStudentFilter(!showStudentFilter);
+                }}
+              >
                 <Button icon={faFilter} text="Filter" />
               </button>
               <button className="mr-4">
@@ -41,6 +50,7 @@ function StudentList() {
           </div>
         </div>
       </div>
+      {showStudentFilter && <div className="modal_css"><StudentFilterModal filterModalClose={filterModalClose} /> </div>}
     </div>
   );
 }
