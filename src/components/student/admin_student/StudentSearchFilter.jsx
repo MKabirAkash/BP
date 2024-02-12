@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import DropDown from "../../common/DropDown";
+import { useSelector } from "react-redux";
 function StudentSearchFilter() {
   let [showDropDown, setShowDropDown] = useState(false);
+  const { courses } = useSelector((state) => state.courseSlice);
   return (
     <div className=" rounded-xl flex flex-col sm:flex-row w-full gap-y-8 sm:gap-y-0 sm:gap-x-8 bg-gray">
       <div className="w-full xl:w-1/2 flex flex-col rounded-xl bg-white p-4 md:p-8">
@@ -60,7 +62,7 @@ function StudentSearchFilter() {
         </div>
         {showDropDown && (
           <div className="mt-[88px] px-4 md:px-8 w-full absolute left-0 top-4 sm:top-8">
-            <DropDown options={[1, 2, 4, 5, 6]} />
+            <DropDown options={courses ? courses : null} />
           </div>
         )}
       </div>
