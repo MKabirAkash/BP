@@ -106,11 +106,11 @@ const TableBody = ({ data }) => {
                 </div>
               </td>
               <td className=" py-4 ">
-                <p className="text-table_low md:text-base sm:text-xs xs:text-xs">
+                <p className="text-text_clr md:text-base sm:text-xs xs:text-xs">
                   Thakurgaon Govt College
                 </p>
               </td>
-              <td className=" py-2 flex justify-center ">
+              <td className=" py-4 flex justify-center ">
                 <span className="py-2 px-[18px] my-auto flex flex-row rounded-xl bg-btn_bg2 text-web_clr text-base ">
                   <span className="mt-[1px]">
                     <FontAwesomeIcon icon={faFileExport} />

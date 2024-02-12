@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import {
+  faAngleDown,
   faAngleLeft,
+  faCopy,
   faEdit,
   faMessage,
   faPaperPlane,
@@ -9,6 +11,8 @@ import {
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { EyeIcon, KickOut, LockIcon } from "../components/SVG/SVGIcons";
+import StudentPaymentTable from "../components/student/admin_student/StudentPayementTable";
 
 function SingleStudent() {
   let [showBasic, setShowBasic] = useState(true);
@@ -176,6 +180,8 @@ function SingleStudent() {
           </div>
         </>
       )}
+
+      {/* /sub navigatio show courses start */}
       {showCourse && (
         <div className="bg-white">
           <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg   my-auto">
@@ -192,6 +198,9 @@ function SingleStudent() {
           </div>
         </div>
       )}
+      {/* /sub navigatio show courses end */}
+
+      {/* /sub navigatio show payment start */}
       {showPayment && (
         <div className="bg-white">
           <div className="p-4 md:p-8 flex flex-col justify-between rounded-lg  my-auto">
@@ -201,14 +210,48 @@ function SingleStudent() {
             <div className=" rounded-xl flex flex-col md:flex-row justify-between gap-x-4 ">
               <div className="w-full md:w-1/2 flex flex-col ">
                 <label className="py-2">Current Device</label>
-                <div className=" rounded-xl border border-input_border">
-                  <div className="p-6">akash</div>
+                <div className=" rounded-xl border border-input_border flex justify-between">
+                  <div className="p-6 flex flex-col gap-y-1">
+                    <span className="text-table_heading text-lg font-medium">
+                      Chrome 321.6548.225
+                    </span>
+                    <span className="text-base font-medium text-text_clr">
+                      Windows 10 08/02/2026 10:32 AM
+                    </span>
+                  </div>
+                  <div className="p-6 my-auto">
+                    <span className="bg-web_clr rounded-lg text-white py-2 px-6 mx-auto flex justify-between my-auto">
+                      <span className="my-auto mr-3 hidden 2xl:inline">
+                        Kick Out
+                      </span>
+                      <span>
+                        <KickOut />
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="w-full md:w-1/2 flex flex-col ">
-                <label className="py-2">Another Device</label>
-                <div className=" rounded-xl border border-input_border">
-                  <div className="p-6">akash</div>
+                <label className="py-2">Current Device</label>
+                <div className=" rounded-xl border border-input_border flex justify-between">
+                  <div className="p-6 flex flex-col gap-y-1">
+                    <span className="text-table_heading text-lg font-medium">
+                      Chrome 321.6548.225
+                    </span>
+                    <span className="text-base font-medium text-text_clr">
+                      Windows 10 08/02/2026 10:32 AM
+                    </span>
+                  </div>
+                  <div className="p-6 my-auto">
+                    <span className="bg-web_clr rounded-lg text-white py-2 px-6 mx-auto flex justify-between my-auto">
+                      <span className="my-auto mr-3 hidden 2xl:inline">
+                        Kick Out
+                      </span>
+                      <span>
+                        <KickOut />
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -216,13 +259,74 @@ function SingleStudent() {
               <div className="w-full md:w-1/2 flex flex-col ">
                 <label className="py-2">Password</label>
                 <div className=" rounded-xl border border-input_border">
-                  <div className="py-2 px-6">akash</div>
+                  <div className="py-3.5 px-6 flex justify-between">
+                    <span className="flex ">
+                      <LockIcon />
+                      <span className="px-3">**************</span>
+                    </span>
+                    <span className="flex my-auto">
+                      <span className="my-auto">
+                        <EyeIcon />
+                      </span>
+
+                      <span className="pl-2">
+                        <FontAwesomeIcon
+                          icon={faCopy}
+                          className="text-web_clr"
+                        />
+                      </span>
+                    </span>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div className="pt-5 flex flex-col justify-between rounded-lg  my-auto">
+              <span className="text-table_heading text-2xl font-medium my-auto">
+                Payments
+              </span>
+              <div className="py-2">
+                <StudentPaymentTable
+                  paymentType="completed"
+                  data={[0, 28989, 233, 98, 9, 32, 3]}
+                />
+              </div>
+            </div>
+
+            <div className="p-5 flex flex-row justify-between rounded-lg  mt-5 border border-input_border">
+              <span>Pending transactions (02)</span>
+              <span>
+                <FontAwesomeIcon icon={faAngleDown} />
+              </span>
+            </div>
+            <div className="flex flex-col justify-between rounded-lg  mt-5">
+              <span className="text-table_heading text-2xl font-medium my-auto ">
+                Pending Transactions (02)
+              </span>
+              <div className="py-3">
+                <StudentPaymentTable
+                  paymentType="due"
+                  data={[0, 28989, 233, 98, 9, 32, 3]}
+                />
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* /sub navigation show payment ends */}
+
+      {/* /sub navigation Activity starts */}
+      {showActivity && (
+        <div className="bg-white">
+          <div className="p-4 md:p-8 flex flex-col justify-between rounded-lg  my-auto">
+            <span className="text-table_heading text-2xl font-medium my-auto">
+              Activity Log
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* /sub navigation Activity ends */}
     </div>
   );
 }
