@@ -143,7 +143,7 @@ const TableBody = ({ data }) => {
                 </p>
               </td>
               <td className=" py-2  ">
-                <span className="text-web_clr font-medium text-sm bg-btn_bg2 px-4 py-3 rounded-xl ">
+                <span className="text-web_clr font-medium border border-white hover:border-web_clr cursor-pointer hover:bg-white text-sm bg-btn_bg2 px-4 py-3 rounded-xl ">
                   View
                 </span>
               </td>

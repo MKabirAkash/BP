@@ -111,7 +111,7 @@ const TableBody = ({ data }) => {
                 </p>
               </td>
               <td className=" py-4 flex justify-center ">
-                <span className="py-2 px-[18px] my-auto flex flex-row rounded-xl bg-btn_bg2 text-web_clr text-base ">
+                <span className="py-2 px-[18px] my-auto flex flex-row rounded-xl cursor-pointer border border-white hover:bg-white hover:border-web_clr bg-btn_bg2 text-web_clr text-base ">
                   <span className="mt-[1px]">
                     <FontAwesomeIcon icon={faFileExport} />
                   </span>

@@ -4,9 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetEndIndex, resetStartIndex } from "../../../redux/common/template";
 import Pagination from "../../common/Pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsRotate, faCopy, faTrash, faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowsRotate,
+  faCopy,
+  faTrash,
+  faTrashRestoreAlt,
+} from "@fortawesome/free-solid-svg-icons";
 const headers = [
-  { name: "Course Name", styles: "min-w-[180px] pl-3" },
+  { name: "Course Name", styles: "min-w-[150px] pl-3" },
   { name: "Promo Code", styles: "min-w-[150px]" },
   { name: "Date", styles: "min-w-[150px]" },
   { name: "Facebook ID", styles: "min-w-[150px]" },
@@ -35,7 +40,7 @@ const StudentCourseTable = ({ data }) => {
             <div className="w-full overflow-x-auto border-none">
               <table className="w-full table-auto bg-white rounded-xl">
                 <TableHead headers={headers} />
-                
+
                 <TableBody data={data} />
               </table>
             </div>
@@ -100,35 +105,60 @@ const TableBody = ({ data }) => {
               key={index}
               className=" rounded-md border-b border-profile_tag border-opacity-20"
             >
-              <td className="py-4 pl-4">
-                <span className="min-w-max flex flex-row">
-                    <span> <img src="https://www.shutterstock.com/image-photo/elearning-education-internet-lessons-online-600nw-2158034833.jpg" className="w-32 h-16 rounded-xl"/></span>
-                <span className="my-auto ml-4">this is a testcourse2635236</span>
+              <td className="py-4 pl-4 pr-4">
+                <span className="min-w-max flex">
+                  <span>
+                    {" "}
+                    <img
+                      src="https://www.shutterstock.com/image-photo/elearning-education-internet-lessons-online-600nw-2158034833.jpg"
+                      className="w-32 h-16 rounded-xl"
+                    />
+                  </span>
+                  <span className="my-auto pl-4 flex flex-col ">
+                    <span>this is a testcourse2635236 of</span>
+                    <span>powerplay season 1</span>
+                  </span>
                 </span>
               </td>
               <td className="py-4">
-                <p className="text-table_low md:text-sm sm:text-xs xs:text-xs">
-                AFGWER80
+                <p className="text-text_clr md:text-sm sm:text-xs xs:text-xs">
+                  AFGWER80
                 </p>
               </td>
 
               <td className="py-2">
-                <h5 className="text-table_low md:text-sm sm:text-xs xs:text-xs ">
-                AFGWER80
+                <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs ">
+                  AFGWER80
                 </h5>
               </td>
 
               <td className="py-2">
-                <h5 className="text-table_low md:text-sm sm:text-xs xs:text-xs flex gap-x-2">
-                <span className="my-auto underline cursor-pointer text-[#0092ff]">Tonmoy Hasan</span><span><FontAwesomeIcon icon={faCopy} className="text-white bg-[#0092ff] py-1 px-1.5 rounded"/></span>
+                <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs flex gap-x-2">
+                  <span className="my-auto underline cursor-pointer text-[#0092ff]">
+                    Tonmoy Hasan
+                  </span>
+                  <span>
+                    <FontAwesomeIcon
+                      icon={faCopy}
+                      className="text-white bg-[#0092ff] py-1 px-1.5 rounded"
+                    />
+                  </span>
                 </h5>
               </td>
 
               <td className="py-2">
                 <h5 className="text-table_low md:text-sm sm:text-xs xs:text-xs flex justify-center gap-x-4">
-                <span className="text-[#23ab58] bg-[#e0ffe1] px-4 py-2 rounded-xl">Active</span>
-                <span className="text-[#EA2725] bg-[#fde9e9] px-4 py-2 rounded-xl">Remove <FontAwesomeIcon icon={faTrash}/></span>
-                <span className="text-[#0092ff] bg-[#e0f2ff] px-4 py-2 rounded-xl">Exchange <FontAwesomeIcon icon={faArrowsRotate}/></span>
+                  <span className="text-[#23ab58] bg-[#e0ffe1] px-4 py-2 rounded-xl flex cursor-pointer">
+                    Active
+                  </span>
+                  <span className="text-[#EA2725] bg-[#fde9e9] px-4 py-2 rounded-xl flex my-auto gap-x-2 cursor-pointer">
+                    <span className="hidden md:inline">Remove</span>{" "}
+                    <FontAwesomeIcon icon={faTrash} className="pt-0.5" />
+                  </span>
+                  <span className="text-[#0092ff] bg-[#e0f2ff] px-4 py-2 rounded-xl flex gap-x-2 cursor-pointer">
+                    <span className="hidden md:inline">Exchange</span>{" "}
+                    <FontAwesomeIcon icon={faArrowsRotate} className="pt-0.5" />
+                  </span>
                 </h5>
               </td>
             </tr>

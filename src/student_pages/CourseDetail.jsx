@@ -1,5 +1,5 @@
 import React from "react";
-import CourseHeader from "../components/student/course/CourseHeader";
+import CourseHeader from "../components/course/CourseHeader";
 
 function CourseDetail() {
   return (

@@ -13,7 +13,7 @@ function CourseHeader() {
           <div className="flex gap-6 mt-10">
             <div className="player w-8/12 bg-gray__600 h-[500px] relative">
               <div className="play_icon absolute top-[40%] left-[45%]">
-                Media Player
+                <iframe src="" />
               </div>
             </div>
             <div className="w-4/12 shadow-3">

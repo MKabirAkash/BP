@@ -3,9 +3,8 @@ import { useDispatch } from "react-redux";
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden h-screen  font-sans">
-      <div className="mpx-6 lg:px-8">
-
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8 ">
+      <div className="p-4 lg:p-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-8 ">
           <>
             <div className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-primary/10">
               <div className="text-base leading-7">
@@ -19,7 +18,7 @@ export default function Hero() {
             </div>
           </>
 
-          <div className="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-primary/10">
+          <div className="flex gap-x-4 rounded-xl bg-white/5  ring-1 ring-inset ring-primary/10">
             <div className="text-base leading-7">
               <h3 className="font-semibold text-2xl mb-2 text-web_clr">
                 Teacher

@@ -23,7 +23,7 @@ function ExportStudent() {
                   <label className="text-table_heading text-sm font-medium pb-1">
                     From Date
                   </label>
-                  <div className=" w-full border px-3 py-2.5 border-input_border rounded-lg flex flex-row justify-between my-auto">
+                  <div className="cursor-pointer w-full border px-3 py-2.5 border-input_border rounded-lg flex flex-row justify-between my-auto">
                     <span>11-04-2024</span>
                     <span className="text-[#B2B0AD]">
                       <FontAwesomeIcon icon={faCalendar} />
@@ -34,7 +34,7 @@ function ExportStudent() {
                   <label className="text-table_heading text-sm font-medium  pb-1">
                     To Date
                   </label>
-                  <div className=" w-full border px-3 py-2.5 border-input_border rounded-lg flex flex-row justify-between my-auto">
+                  <div className="cursor-pointer w-full border px-3 py-2.5 border-input_border rounded-lg flex flex-row justify-between my-auto">
                     <span>11-04-2025</span>
                     <span className="text-[#B2B0AD]">
                       <FontAwesomeIcon icon={faCalendar} />
@@ -43,7 +43,7 @@ function ExportStudent() {
                 </div>
                 <div className="w-full lg:w-[20%]  flex flex-col mt-0 lg:mt-6 ">
                   <div className="w-full lg:w-[30%] mt-2.5">
-                    <span className="bg-web_clr rounded-xl px-8 py-4 text-white block lg:inline text-center">
+                    <span className=" cursor-pointer rounded-xl px-8 py-4 text-white border bg-web_clr border-web_clr  hover:text-web_clr hover:bg-white block lg:inline text-center">
                       Export
                     </span>
                   </div>

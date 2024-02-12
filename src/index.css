@@ -84,13 +84,12 @@
     radial-gradient(at 33% 20%, rgba(19, 16, 14, 0.1) 0px, transparent 20%),
     radial-gradient(at 79% 53%, rgba(2, 114, 21, 0.1) 0px, transparent 20%);
 }
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   position: relative;
 }
-.modal_css{
+.modal_css {
   position: absolute;
-  
 }

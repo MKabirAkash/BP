@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { resetEndIndex, resetStartIndex } from "../../../redux/common/template";
 import Pagination from "../../common/Pagination";
-import Button from "../../common/Button";
-import { faFileExport } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const headers = [
   { name: "Course Id", styles: "min-w-[100px]  text-center" },
@@ -151,8 +148,8 @@ const TableBody = ({ data, paymentType }) => {
                 </p>
               </td>
               {paymentType && paymentType !== "completed" && (
-                <td className=" py-2 ">
-                  <span className="py-2 px-6 my-auto flex flex-row justify-center rounded-xl bg-btn_bg2 text-web_clr text-base ">
+                <td className=" py-2 cursor-pointer">
+                  <span className="py-2 px-6 my-auto flex flex-row justify-center rounded-xl border border-white hover:border-web_clr hover:bg-white bg-btn_bg2 text-web_clr text-base ">
                     <span>Check</span>
                   </span>
                 </td>
