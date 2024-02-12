@@ -35,7 +35,7 @@ function StudentSearchFilter() {
                   navigate("/students/single");
                 }}
               >
-                <span className=" rounded-xl px-6 py-4 text-white border bg-web_clr border-web_clr hover:border-web_clr hover:text-web_clr hover:bg-white block lg:inline text-center">
+                <span className=" rounded-xl px-6 py-3 text-white border bg-web_clr border-web_clr hover:border-web_clr hover:text-web_clr hover:bg-white block lg:inline text-center">
                   Search
                 </span>
               </div>
