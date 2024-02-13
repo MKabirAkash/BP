@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   faAngleDown,
   faAngleLeft,
+  faBan,
   faCopy,
   faEdit,
   faMessage,
@@ -15,6 +16,7 @@ import StudentCourseTable from "../components/student/admin_student/StudentCours
 import { EyeIcon, KickOut, LockIcon } from "../components/SVG/SVGIcons";
 import StudentPaymentTable from "../components/student/admin_student/StudentPaymentTable";
 import StudentSearchFilter from "../components/student/admin_student/StudentSearchFilter";
+import StudentBanModal from "../components/common/Modals/StudentBanModal";
 const data = [1, 2, 3, 4, 5];
 const data2 = [1, 2, 3];
 function SingleStudent() {
@@ -24,6 +26,7 @@ function SingleStudent() {
   let [showPayment, setShowPayment] = useState(false);
   let [showActivityAdmin, setShowActivityAdmin] = useState(true);
   let [showActivityStudent, setShowActivityStudent] = useState(false);
+  let [showBanModal, setShowBanModal] = useState(false);
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
@@ -102,8 +105,8 @@ function SingleStudent() {
         </div>
 
         {showBasic && (
-          <div className="bg-white">
-            <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg bg-gray pt-2 mx-2 md:mx-4 ">
+          <div className="bg-white rounded-xl">
+            <div className="p-4 md:p-8 flex flex-row justify-between rounded-lg bg-gray pt-2 mx-2 md:mx-6 ">
               <div className="flex flex-row gap-x-3 ">
                 <div>
                   {" "}
@@ -134,7 +137,7 @@ function SingleStudent() {
                 </span>
               </div>
             </div>
-            <div className="p-4 md:p-8 flex flex-col  rounded-lg bg-gray mt-4 mx-2 md:mx-4">
+            <div className="p-4 md:p-8 flex flex-col  rounded-lg bg-[#fff8f5] mt-4 mx-2 md:mx-6">
               <span className="flex flex-row justify-start border-b-[1px] border-opacity-25 border-table_low py-4 my-auto">
                 <span className="w-1/2 text-text_clr text-[15px]">
                   Registation Number
@@ -194,8 +197,13 @@ function SingleStudent() {
                 <span className="w-1/2 text-table_heading text-base font-medium">
                   AB-
                 </span>
-              </span>
+              </span>              
             </div>
+            {/* buttons ban unban */}
+              <span className="text-sm md:text-base bg-web_clr hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4 mx-2 md:mx-6" onClick={()=>{
+                setShowBanModal (!showBanModal)
+              }}>Ban <FontAwesomeIcon icon={faBan}/></span>
+              <span className="text-sm md:text-base bg-success hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4">Unban</span>
           </div>
         )}
 
@@ -445,6 +453,10 @@ function SingleStudent() {
 
         {/* /sub navigation Activity ends */}
       </div>
+
+      {showBanModal && <section className="modal_css mt-32">
+              <StudentBanModal />
+      </section>}
     </div>
   );
 }
