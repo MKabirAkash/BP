@@ -12,14 +12,12 @@ import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import StudentSearchFilter from "../components/student/admin_student/StudentSearchFilter";
 import { useSelector } from "react-redux";
+import StudentFilterModal from "../components/common/Modals/StudentFilterModal";
 
 function StudentList() {
   const navigate = useNavigate();
+  let [showFilterModal, setShowFilterModal] = useState(false);
   const { students } = useSelector((state) => state.studentSlice);
-  let [showStudentFilter, setShowStudentFilter] = useState(false);
-  const filterModalClose = () => {
-    setShowStudentFilter(false);
-  };
   return (
     <div className="p-4 md:p-8 bg-gray font-sans">
       <div className="flex flex-col">
@@ -32,9 +30,7 @@ function StudentList() {
             <div className="flex flex-row justify-end ">
               <button
                 className="mr-4 "
-                onClick={() => {
-                  setShowStudentFilter(!showStudentFilter);
-                }}
+                onClick={() => setShowFilterModal(!showFilterModal)}
               >
                 <Button icon={faFilter} text="Filter" />
               </button>
@@ -51,9 +47,9 @@ function StudentList() {
           </div>
         </div>
       </div>
-      {showStudentFilter && (
+      {showFilterModal && (
         <div className="modal_css">
-          <StudentFilterModal filterModalClose={filterModalClose} />{" "}
+          <StudentFilterModal />
         </div>
       )}
     </div>

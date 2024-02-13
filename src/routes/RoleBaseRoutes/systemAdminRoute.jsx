@@ -6,6 +6,7 @@ const ErrorPage = lazy(() => import("../../pages/ErrorPage"));
 const StudentList = lazy(() => import("../../pages/StudentList"));
 const ExportStudent = lazy(() => import("../../pages/ExportStudent"));
 const SingleStudent = lazy(() => import("../../pages/SingleStudent"));
+const CourseList = lazy(() => import("../../pages/CourseList"));
 
 const systemAdminRoute = [
   { path: "/", element: <Home /> },
@@ -14,6 +15,7 @@ const systemAdminRoute = [
   { path: "/students", element: <StudentList /> },
   { path: "/students/export", element: <ExportStudent /> },
   { path: "/students/single", element: <SingleStudent /> },
+  { path: "/courses", element: <CourseList /> },
   { path: "/error", element: <ErrorPage /> },
 ];
 
