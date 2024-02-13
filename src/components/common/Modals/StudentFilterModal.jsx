@@ -5,9 +5,15 @@ function StudentFilterModal({ filterModalClose }) {
   return (
     <div className="bg-white shadow-5 w-full md:w-[700px] rounded-xl">
       <p className="w-full border-b border-web_clr border-opacity-25 py-3 flex justify-between px-6">
-        <span className="pl-3 inline-block">Filter Option</span> <span className="inline-block cursor-pointer"  onClick={()=>{
-          filterModalClose()
-        }}><FontAwesomeIcon icon={faClose}/></span>
+        <span className="pl-3 inline-block">Filter Option</span>{" "}
+        <span
+          className="inline-block cursor-pointer"
+          onClick={() => {
+            filterModalClose();
+          }}
+        >
+          <FontAwesomeIcon icon={faClose} />
+        </span>
       </p>
       <section className="p-8 flex flex-wrap gap-x-4 gap-y-3 justify-between w-full text-start">
         <div className="xs:w-full md:w-[48%] ">
@@ -102,7 +108,6 @@ function StudentFilterModal({ filterModalClose }) {
         </div>
       </section>
       <div className="flex flex-wrap justify-between md:justify-end gap-x-4 py-5 px-5 md:px-8 shadow-5 rounded-xl cursor-pointer gap-y-2">
-        <span className="bg-[#FFEDE5] py-3 px-12 rounded-lg text-web_clr hover:bg-hover_clr_light transition">
         <span
           className="bg-[#FFEDE5] py-3 px-12 rounded-lg text-web_clr hover:bg-hover_clr_light transition"
           onClick={() => {

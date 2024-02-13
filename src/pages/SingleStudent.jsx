@@ -27,9 +27,17 @@ function SingleStudent() {
   let [showActivityAdmin, setShowActivityAdmin] = useState(true);
   let [showActivityStudent, setShowActivityStudent] = useState(false);
   let [showBanModal, setShowBanModal] = useState(false);
+  let [showMessageModal, setShowMessageModal] = useState(false);
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
+  };
+
+  const banModalClose = () => {
+    setShowBanModal(false);
+  };
+  const messageModalClose = () => {
+    setShowMessageModal(false);
   };
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -123,7 +131,12 @@ function SingleStudent() {
                 </div>
               </div>
               <div className="flex flex-row justify-end my-auto pt-3 md:pt-0">
-                <span className="py-2.5 px-5 rounded-xl bg-white text-web_clr mr-3 cursor-pointer border border-white hover:border-web_clr">
+                <span
+                  className="py-2.5 px-5 rounded-xl bg-white text-web_clr mr-3 cursor-pointer border border-white hover:border-web_clr"
+                  onClick={() => {
+                    setShowMessageModal(!showMessageModal);
+                  }}
+                >
                   <span className="mr-2 hidden md:inline">Send Message</span>
                   <span className="">
                     <FontAwesomeIcon icon={faPaperPlane} className="" />
@@ -197,13 +210,20 @@ function SingleStudent() {
                 <span className="w-1/2 text-table_heading text-base font-medium">
                   AB-
                 </span>
-              </span>              
+              </span>
             </div>
             {/* buttons ban unban */}
-              <span className="text-sm md:text-base bg-web_clr hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4 mx-2 md:mx-6" onClick={()=>{
-                setShowBanModal (!showBanModal)
-              }}>Ban <FontAwesomeIcon icon={faBan}/></span>
-              <span className="text-sm md:text-base bg-success hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4">Unban</span>
+            <span
+              className="text-sm md:text-base bg-web_clr hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4 mx-2 md:mx-6"
+              onClick={() => {
+                setShowBanModal(!showBanModal);
+              }}
+            >
+              Ban <FontAwesomeIcon icon={faBan} />
+            </span>
+            <span className="text-sm md:text-base bg-success hover:bg-hover_clr_dark transition py-3 px-8 rounded-xl text-white cursor-pointer inline-block my-2 md:my-4">
+              Unban
+            </span>
           </div>
         )}
 
@@ -454,9 +474,16 @@ function SingleStudent() {
         {/* /sub navigation Activity ends */}
       </div>
 
-      {showBanModal && <section className="modal_css mt-32">
-              <StudentBanModal />
-      </section>}
+      {showBanModal && (
+        <section className="modal_css mt-80">
+          <StudentBanModal type="ban" banModalClose={banModalClose} />
+        </section>
+      )}
+      {showMessageModal && (
+        <section className="modal_css">
+          <StudentBanModal type="message" banModalClose={messageModalClose} />
+        </section>
+      )}
     </div>
   );
 }

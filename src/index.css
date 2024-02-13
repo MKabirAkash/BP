@@ -92,13 +92,13 @@ body {
 }
 .modal_css {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 700px) {
-  .modal_css{
+  .modal_css {
     width: 90%;
   }
 }

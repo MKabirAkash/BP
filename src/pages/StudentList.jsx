@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import StudentTable from "../components/student/admin_student/StudentTable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,6 +17,9 @@ import StudentFilterModal from "../components/common/Modals/StudentFilterModal";
 function StudentList() {
   const navigate = useNavigate();
   let [showFilterModal, setShowFilterModal] = useState(false);
+  const filterModalClose = () => {
+    setShowFilterModal(false);
+  };
   const { students } = useSelector((state) => state.studentSlice);
   return (
     <div className="p-4 md:p-8 bg-gray font-sans">
@@ -49,7 +52,7 @@ function StudentList() {
       </div>
       {showFilterModal && (
         <div className="modal_css">
-          <StudentFilterModal />
+          <StudentFilterModal filterModalClose={filterModalClose} />
         </div>
       )}
     </div>
