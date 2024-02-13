@@ -475,7 +475,7 @@ function SingleStudent() {
       </div>
 
       {showBanModal && (
-        <section className="modal_css mt-80">
+        <section className="modal_css mt-64">
           <StudentBanModal type="ban" banModalClose={banModalClose} />
         </section>
       )}
