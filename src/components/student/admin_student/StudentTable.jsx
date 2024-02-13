@@ -102,44 +102,44 @@ const TableBody = ({ data }) => {
               <td className=" py-2 pl-4">
                 <div className="min-w-max">
                   <h5 className="text-profile_name font-normal lg:text-base sm:text-sm xs:text-sm ">
-                    Tonmoy vaiya
+                    {row.name}
                   </h5>
                 </div>
               </td>
               <td className=" py-4 ">
                 <p className="text-text_clr md:text-base sm:text-xs xs:text-xs">
-                  Thakurgaon Govt College
+                  {row.institute}
                 </p>
               </td>
 
               <td className=" py-2">
                 <h5 className="text-text_clr md:text-sm sm:text-xs xs:text-xs ">
-                  MATH8728278
+                  {row.registration}
                 </h5>
               </td>
 
               <td className=" py-2 ">
                 <p className="text-profile_name md:text-sm sm:text-xs xs:text-xs text-left">
-                  01876542422
+                  {row.phone}
                 </p>
               </td>
               <td className=" py-2  ">
                 <h5
                   className={`text-center ${
-                    index % 2 === 0 ? "text-success" : "text-danger"
+                    row.staus === 1 ? "text-success" : "text-danger"
                   }  md:text-sm sm:text-xs xs:text-xs`}
                 >
-                  {index % 2 === 0 ? "Active" : "Banned"}
+                  {row.status === 1 ? "Active" : "Banned"}
                 </h5>
               </td>
 
               <td className=" py-2  ">
                 <p
                   className={`text-center ${
-                    index % 2 === 0 ? "text-success" : "text-danger"
+                    row.groupJoined === true ? "text-success" : "text-danger"
                   }  md:text-sm sm:text-xs xs:text-xs`}
                 >
-                  {index % 2 === 0 ? "Joined" : "Not Yet"}
+                  {row.groupJoined === true ? "Joined" : "Not Yet"}
                 </p>
               </td>
               <td className=" py-2  ">

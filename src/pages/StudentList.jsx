@@ -11,9 +11,11 @@ import {
 import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
 import StudentSearchFilter from "../components/student/admin_student/StudentSearchFilter";
+import { useSelector } from "react-redux";
 
 function StudentList() {
   const navigate = useNavigate();
+  const { students } = useSelector((state) => state.studentSlice);
   return (
     <div className="p-4 md:p-8 bg-gray font-sans">
       <div className="flex flex-col">
@@ -36,7 +38,7 @@ function StudentList() {
             </div>
           </div>
           <div className="mt-3 rounded-xl">
-            <StudentTable data={[1, 2, 3, 4, 5, 6]} />
+            <StudentTable data={students ? students : null} />
           </div>
         </div>
       </div>
